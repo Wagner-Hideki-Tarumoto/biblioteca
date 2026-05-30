@@ -1,29 +1,102 @@
-/* Cores identitárias baseadas no ecossistema FATEC */
-:root {
-    --fatec-blue-dark: #1e3a8a;
-    --fatec-blue-light: #2563eb;
-    --fatec-red: #b91c1c;
-    --bg-gray: #f3f4f6;
-}
+<body>
 
-body {
-    background-color: var(--bg-gray);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-}
+    <!-- TOPO -->
+    <header class="topbar">
+        <div class="logo-topo">
+            <i class="fa-solid fa-share-nodes"></i>
+            Conecta
+        </div>
 
-/* Animação suave de transição de telas */
-.screen-view {
-    transition: all 0.3s ease-in-out;
-}
+        <div class="usuario">
+            Olá, Visitante!
+        </div>
+    </header>
 
-/* Customização de scrollbar para visual limpo */
-::-webkit-scrollbar {
-    width: 6px;
-}
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 4px;
-}
+    <!-- LAYOUT -->
+    <div class="layout">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+
+            <nav>
+
+                <a href="#">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Academias
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-calendar"></i>
+                    Eventos
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-award"></i>
+                    Extensão
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Projetos
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-book"></i>
+                    Biblioteca
+                </a>
+
+                <a href="#">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    Sair
+                </a>
+
+            </nav>
+
+            <div class="logo-fatec">
+                <h2>Fatec</h2>
+                <span>Registro</span>
+            </div>
+
+        </aside>
+
+        <!-- CONTEÚDO -->
+        <main class="conteudo">
+
+            <section class="hero">
+
+                <h1>Bem-vindo ao Conecta</h1>
+
+                <p>
+                    Comunidade e universidade conectados.
+                </p>
+
+            </section>
+
+            <section class="biblioteca-card">
+
+                <div class="titulo-card">
+
+                    <h2>
+                        <i class="fa-solid fa-book-bookmark"></i>
+                        Biblioteca
+                    </h2>
+
+                    <span>NOVO</span>
+
+                </div>
+
+                <p>
+                    Consulte o acervo, reserve livros e acompanhe seus empréstimos.
+                </p>
+
+                <button>
+                    Acessar Biblioteca
+                </button>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
