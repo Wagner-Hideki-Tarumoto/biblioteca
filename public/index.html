@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta FATEC Registro - Módulo Biblioteca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="text-gray-800 antialiased">
+
+    <div class="bg-slate-900 text-white p-3 sticky top-0 z-50 shadow-md flex flex-wrap justify-center gap-2 text-xs border-b border-blue-500">
+        <span class="flex items-center gap-1 mr-2 text-blue-400 font-bold"><i class="fa-solid fa-microchip"></i> SIMULADOR DE HARDWARE:</span>
+        <button onclick="navegarPara('tela-home')" class="bg-blue-900 px-2.5 py-1 rounded hover:bg-blue-800 transition">1. Home Conecta</button>
+        <button onclick="navegarPara('tela-hub')" class="bg-blue-900 px-2.5 py-1 rounded hover:bg-blue-800 transition">2. Dashboard</button>
+        <button onclick="navegarPara('tela-acervo')" class="bg-blue-900 px-2.5 py-1 rounded hover:bg-blue-800 transition">3. Acervo</button>
+        <button onclick="navegarPara('tela-detalhe')" class="bg-blue-900 px-2.5 py-1 rounded hover:bg-blue-800 transition">4. Detalhes</button>
+        <button onclick="navegarPara('tela-confirmacao')" class="bg-blue-900 px-2.5 py-1 rounded hover:bg-blue-800 transition">5. Sucesso</button>
+        <button onclick="navegarPara('tela-reservas')" class="bg-blue-900 px-2.5 py-1 rounded hover:bg-blue-800 transition">6. Reservas</button>
+        <button onclick="navegarPara('tela-emprestimos')" class="bg-blue-900 px-2.5 py-1 rounded hover:bg-blue-800 transition">7. Empréstimos</button>
+        <button onclick="navegarPara('tela-totem-qr')" class="bg-amber-600 px-2.5 py-1 rounded hover:bg-amber-500 font-bold transition">8. Totem QR</button>
+        <button onclick="navegarPara('tela-totem-rfid')" class="bg-amber-600 px-2.5 py-1 rounded hover:bg-amber-500 font-bold transition">9. Totem RFID</button>
+        <button onclick="navegarPara('tela-vigilante')" class="bg-red-700 px-2.5 py-1 rounded hover:bg-red-600 font-bold transition">10. Vigilante</button>
+        <button onclick="navegarPara('tela-divergencia')" class="bg-red-900 px-2.5 py-1 rounded hover:bg-red-800 transition">11. Divergência</button>
+        <button onclick="navegarPara('tela-devolucao')" class="bg-amber-800 px-2.5 py-1 rounded hover:bg-amber-700 transition">12. Totem Dev</button>
+        <button onclick="navegarPara('tela-inventario')" class="bg-purple-800 px-2.5 py-1 rounded hover:bg-purple-700 transition">13. Inventário</button>
+        <button onclick="navegarPara('tela-echo')" class="bg-cyan-800 px-2.5 py-1 rounded hover:bg-cyan-700 transition">14. Echo Show</button>
+    </div>
+
+    <header class="bg-blue-900 text-white p-4 flex justify-between items-center shadow-md">
+        <div class="flex items-center gap-3">
+            <div class="bg-white p-1.5 rounded text-red-700 font-black text-xl tracking-tighter">FATEC</div>
+            <div>
+                <h1 class="text-base font-bold tracking-wide leading-tight">Conecta FATEC Registro</h1>
+                <p class="text-[11px] text-blue-200">Painel de Extensão Acadêmica</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4 text-xs font-medium">
+            <span class="hidden sm:inline text-blue-200"><i class="fa-regular fa-clock mr-1"></i> Ano Letivo: 2026</span>
+            <div class="bg-blue-950 px-3 py-2 rounded-lg border border-blue-800">
+                <i class="fa-solid fa-user-graduate text-blue-400 mr-1.5"></i>RA: <span class="font-mono font-bold">2420482311002</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-6 max-w-7xl min-h-[75vh]">
+
+        <div id="tela-home" class="screen-view space-y-6">
+            <div class="bg-gradient-to-r redirection bg-white border border-gray-200 p-6 rounded-2xl shadow-sm">
+                <h2 class="text-2xl font-bold text-gray-800">Olá, Thiago Silva!</h2>
+                <p class="text-sm text-gray-500">Selecione o serviço acadêmico que deseja gerenciar hoje.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-5 rounded-xl shadow-sm border-t-4 border-gray-300 opacity-60">
+                    <h3 class="font-bold text-gray-800 mb-1"><i class="fa-solid fa-graduation-cap mr-1.5"></i> Notas e Faltas</h3>
+                    <p class="text-xs text-gray-500 mb-4">Acompanhe seu rendimento acadêmico semestral.</p>
+                    <span class="text-xs font-semibold text-gray-400">Acesso padrão</span>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-sm border-t-4 border-gray-300 opacity-60">
+                    <h3 class="font-bold text-gray-800 mb-1"><i class="fa-solid fa-calendar-days mr-1.5"></i> Horário de Aulas</h3>
+                    <p class="text-xs text-gray-500 mb-4">Consulte a distribuição de disciplinas das salas.</p>
+                    <span class="text-xs font-semibold text-gray-400">Acesso padrão</span>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-md border-t-4 border-blue-800 ring-2 ring-blue-50 hover:scale-[1.02] transition-transform duration-200">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-bold text-lg text-blue-900"><i class="fa-solid fa-book-bookmark mr-1.5 text-blue-700"></i> Biblioteca</h3>
+                        <span class="bg-blue-100 text-blue-800 text-[10px] uppercase font-extrabold px-2 py-0.5 rounded-full">Novo</span>
+                    </div>
+                    <p class="text-xs text-gray-600 mb-6 leading-relaxed">Consulte o acervo, reserve livros de forma autônoma e acompanhe seus prazos de empréstimos ativos.</p>
+                    <button onclick="navegarPara('tela-hub')" class="w-full bg-blue-900 text-white py-2 rounded-lg font-bold text-xs hover:bg-blue-800 transition flex items-center justify-center gap-2">
+                        Acessar Biblioteca <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="tela-hub" class="screen-view hidden space-y-6">
+            <div>
+                <h2 class="text-2xl font-bold text-blue-900">Biblioteca FATEC</h2>
+                <p class="text-xs text-gray-500">Consulte livros, faça reservas e acompanhe seus empréstimos ativos.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 border-l-4 border-green-500">
+                    <p class="text-[10px] uppercase font-bold text-gray-400">Livros Disponíveis</p>
+                    <p class="text-xl font-black text-green-600">1.240 exemplares</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 border-l-4 border-blue-500">
+                    <p class="text-[10px] uppercase font-bold text-gray-400">Minhas Reservas</p>
+                    <p class="text-xl font-black text-blue-700">1 Ativa</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 border-l-4 border-amber-500">
+                    <p class="text-[10px] uppercase font-bold text-gray-400">Empréstimos Ativos</p>
+                    <p class="text-xl font-black text-amber-600">2 Livros</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 border-l-4 border-red-500">
+                    <p class="text-[10px] uppercase font-bold text-gray-400">Devoluções Próximas</p>
+                    <p class="text-xl font-black text-red-600">06/06/2026</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-4 shadow-sm">
+                <div class="flex flex-col md:flex-row gap-2">
+                    <div class="relative flex-1">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-gray-400 text-xs"></i>
+                        <input type="text" placeholder="Pesquisar por título, autor ou categoria..." class="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg text-xs focus:ring-1 focus:ring-blue-800 focus:outline-none">
+                    </div>
+                    <button onclick="navegarPara('tela-acervo')" class="bg-blue-900 text-white px-4 py-2 rounded-lg font-bold text-xs hover:bg-blue-800 transition"><i class="fa-solid fa-sliders mr-1"></i> Filtrar Acervo</button>
+                </div>
+                <div>
+                    <p class="text-[10px] uppercase font-bold text-gray-400 mb-2">Categorias Recomendadas:</p>
+                    <div class="flex flex-wrap gap-1.5 text-xs">
+                        <span class="bg-blue-900 text-white px-2.5 py-1 rounded-full font-medium">Todos</span>
+                        <span class="bg-gray-150 text-gray-600 px-2.5 py-1 rounded-full hover:bg-gray-200 cursor-pointer">Programação</span>
+                        <span class="bg-gray-150 text-gray-600 px-2.5 py-1 rounded-full hover:bg-gray-200 cursor-pointer">Banco de Dados</span>
+                        <span class="bg-gray-150 text-gray-600 px-2.5 py-1 rounded-full hover:bg-gray-200 cursor-pointer">Redes</span>
+                        <span class="bg-gray-150 text-gray-600 px-2.5 py-1 rounded-full hover:bg-gray-200 cursor-pointer">Engenharia de Software</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tela-acervo" class="screen-view hidden space-y-4">
+            <h3 class="text-lg font-bold text-blue-900">Resultados da Pesquisa no Catálogo</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="bg-blue-950 text-white h-40 rounded-lg flex items-center justify-center p-4 text-center font-bold text-sm shadow-inner mb-3">
+                            Java para Iniciantes
+                        </div>
+                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded-full">Disponível</span>
+                        <h4 class="font-bold text-base mt-2 text-gray-900">Java para Iniciantes</h4>
+                        <p class="text-xs text-gray-500">Autor: Carlos Silva</p>
+                        <p class="text-xs text-gray-500">Categoria: Programação</p>
+                        <p class="text-xs text-amber-800 font-semibold mt-2"><i class="fa-solid fa-map-pin"></i> Estante 2, Prateleira B</p>
+                    </div>
+                    <div class="mt-4 grid grid-cols-2 gap-2 border-t pt-3">
+                        <button onclick="navegarPara('tela-detalhe')" class="text-xs border border-gray-300 py-1.5 rounded-lg font-bold text-gray-700 hover:bg-gray-50">Detalhes</button>
+                        <button onclick="navegarPara('tela-confirmacao')" class="text-xs bg-blue-900 text-white py-1.5 rounded-lg font-bold hover:bg-blue-800">Reservar</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="bg-slate-700 text-white h-40 rounded-lg flex items-center justify-center p-4 text-center font-bold text-sm shadow-inner mb-3">
+                            Banco de Dados Básico
+                        </div>
+                        <span class="bg-gray-200 text-gray-600 text-[10px] font-bold px-2 py-0.5 rounded-full">Emprestado</span>
+                        <h4 class="font-bold text-base mt-2 text-gray-900">Banco de Dados Básico</h4>
+                        <p class="text-xs text-gray-500">Autor: Maria Souza</p>
+                        <p class="text-xs text-red-600 font-medium mt-1">Devolução prevista: 06/06/2026</p>
+                    </div>
+                    <button onclick="alert('Inscrição na fila efetuada! Avisaremos no Conecta assim que retornar.')" class="w-full mt-4 bg-slate-900 text-white text-xs font-bold py-2 rounded-lg hover:bg-slate-800">Entrar na Fila</button>
+                </div>
+
+                <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="bg-amber-900 text-white h-40 rounded-lg flex items-center justify-center p-4 text-center font-bold text-sm shadow-inner mb-3">
+                            Python Essencial
+                        </div>
+                        <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded-full"><i class="fa-solid fa-check"></i> Reservado para você</span>
+                        <h4 class="font-bold text-base mt-2 text-gray-900">Python Essencial</h4>
+                        <p class="text-xs text-gray-500">Autor: André Oliveira</p>
+                        <p class="text-xs text-blue-700 font-bold mt-1">Válido até: Hoje as 18:00h</p>
+                    </div>
+                    <button onclick="navegarPara('tela-reservas')" class="w-full mt-4 border-2 border-blue-900 text-blue-900 text-xs font-bold py-2 rounded-lg hover:bg-blue-50">Ver Reserva</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="tela-detalhe" class="screen-view hidden">
+            <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-blue-900 text-white h-64 rounded-xl flex items-center justify-center font-bold text-xl p-4 shadow shadow-inner">
+                    Java para Iniciantes
+                </div>
+                <div class="md:col-span-2 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="bg-green-100 text-green-800 text-[10px] font-bold px-2 py-0.5 rounded-full">Disponível para Retirada</span>
+                        <h2 class="text-2xl font-bold text-gray-950 mt-1">Java para Iniciantes: Estruturas de Dados Modernas</h2>
+                        <p class="text-xs text-gray-500">Autor: Carlos Silva | Categoria: Programação Estruturada</p>
+                        
+                        <div class="grid grid-cols-2 gap-2 mt-4 bg-gray-50 p-3 rounded-lg text-xs border border-gray-150">
+                            <p>Localização Física: <strong class="text-gray-900 block font-semibold">Estante 2, Prateleira B</strong></p>
+                            <p>Código do Exemplar: <strong class="text-blue-900 block font-mono">RFID-FATEC-88321</strong></p>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-3 leading-relaxed">Este exemplar aborda de forma prática a introdução ao ecossistema Java, focado em lógica estruturada para desenvolvimento multiplataforma acadêmico.</p>
+                    </div>
+
+                    <div class="bg-blue-50 border border-blue-200 p-3 rounded-xl text-[11px] text-blue-950 flex gap-2 items-start">
+                        <i class="fa-solid fa-circle-info text-blue-700 mt-0.5"></i>
+                        <p><strong>Autoatendimento Inteligente:</strong> Para retirar este livro, vá até a biblioteca, recolha o exemplar na estante física acima referenciada e realize o fluxo autônomo de leitura de QR Code e RFID no Totem.</p>
+                    </div>
+
+                    <div class="flex gap-2 text-xs font-bold">
+                        <button onclick="navegarPara('tela-confirmacao')" class="bg-blue-900 text-white px-4 py-2 rounded-lg hover:bg-blue-800">Reservar Livro</button>
+                        <button onclick="navegarPara('tela-acervo')" class="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200">Voltar ao Acervo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tela-confirmacao" class="screen-view hidden">
+            <div class="max-w-md mx-auto bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden">
+                <div class="bg-green-700 text-white text-center p-6">
+                    <i class="fa-solid fa-circle-check text-3xl mb-1"></i>
+                    <h3 class="text-lg font-bold">Reserva Realizada com Sucesso</h3>
+                    <p class="text-[11px] text-green-100">Vá até a biblioteca dentro do prazo para retirar.</p>
+                </div>
+                <div class="p-5 flex flex-col items-center space-y-4">
+                    <div class="w-full text-xs space-y-1.5 border-b pb-3 text-gray-600">
+                        <p class="flex justify-between"><span>Aluno:</span> <strong class="text-gray-900">Thiago Silva dos Santos</strong></p>
+                        <p class="flex justify-between"><span>RA:</span> <strong class="text-gray-900 font-mono">2420482311002</strong></p>
+                        <p class="flex justify-between"><span>Livro:</span> <strong class="text-blue-900 font-bold">Java para Iniciantes</strong></p>
+                        <p class="flex justify-between"><span>Prazo Retirada:</span> <strong class="text-red-700">Hoje até as 18:00h</strong></p>
+                    </div>
+
+                    <div class="bg-gray-50 border p-3 rounded-xl text-center w-full">
+                        <div class="w-32 h-32 bg-slate-900 mx-auto rounded flex flex-col justify-between p-2 font-mono text-[6px] text-white overflow-hidden opacity-90">
+                            <span>■□■□■□■□■□■□■</span>
+                            <span>■■□□■■□□■■□□■</span>
+                            <span>■□■□■□■□■□■□■</span>
+                            <span>■■□□■■□□■■□□■</span>
+                        </div>
+                        <p class="text-[9px] font-mono text-gray-400 mt-1.5">AUTH-TOKEN-2420482311002</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2 w-full text-xs font-bold">
+                        <button onclick="navegarPara('tela-reservas')" class="border py-2 rounded-lg text-gray-700 text-center hover:bg-gray-50">Minhas Reservas</button>
+                        <button onclick="navegarPara('tela-hub')" class="bg-blue-900 text-white py-2 rounded-lg text-center hover:bg-blue-800">Voltar ao Início</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tela-reservas" class="screen-view hidden space-y-4">
+            <h3 class="text-lg font-bold text-blue-900">Minhas Reservas Atuais</h3>
+            <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+                <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                        <tr class="bg-gray-50 border-b font-bold text-gray-500 uppercase">
+                            <th class="p-3">Livro</th>
+                            <th class="p-3">Validade</th>
+                            <th class="p-3">Localização</th>
+                            <th class="p-3">Status</th>
+                            <th class="p-3 text-center">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y text-gray-700">
+                        <tr>
+                            <td class="p-3 font-bold text-gray-900">Java para Iniciantes</td>
+                            <td class="p-3 text-blue-700 font-semibold">Hoje até 18:00h</td>
+                            <td class="p-3">Estante 2, Prateleira B</td>
+                            <td class="p-3"><span class="bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full font-bold">Ativa</span></td>
+                            <td class="p-3 text-center">
+                                <button onclick="alert('Reserva cancelada!')" class="bg-red-50 text-red-700 px-2 py-1 rounded border border-red-100 hover:bg-red-100 font-bold">Cancelar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="tela-emprestimos" class="screen-view hidden space-y-4">
+            <h3 class="text-lg font-bold text-blue-900">Histórico e Empréstimos Ativos</h3>
+            <div class="space-y-3">
+                <div class="bg-white p-4 rounded-xl border border-gray-200 flex justify-between items-center text-xs">
+                    <div>
+                        <span class="bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded-full">Ativo</span>
+                        <h4 class="font-bold text-sm mt-1 text-gray-900">Desenvolvimento de Software Multiplataforma</h4>
+                        <p class="text-gray-500 mt-0.5">Retirado em: 15/05/2026 | Devolução prevista: 05/06/2026</p>
+                    </div>
+                </div>
+                <div class="bg-red-50 p-4 rounded-xl border-2 border-red-500 flex justify-between items-center text-xs">
+                    <div>
+                        <span class="bg-red-600 text-white font-bold px-2 py-0.5 rounded-full">Atrasado</span>
+                        <h4 class="font-bold text-sm mt-1 text-red-900">Introdução a Redes de Computadores</h4>
+                        <p class="text-red-700 font-semibold mt-0.5">Prazo esgotado em: 15/05/2026</p>
+                        <p class="text-red-600 font-bold mt-1"><i class="fa-solid fa-triangle-exclamation"></i> Este livro está com devolução atrasada. Dirija-se imediatamente ao Totem.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tela-totem-qr" class="screen-view hidden">
+            <div class="max-w-2xl mx-auto bg-slate-900 text-white p-6 rounded-3xl border-4 border-slate-700 shadow-xl space-y-6">
+                <div class="border-b border-slate-800 pb-3 flex justify-between items-center">
+                    <div>
+                        <h2 class="text-xl font-black text-blue-400 tracking-tight"><i class="fa-solid fa-desktop"></i> TOTEM DE AUTOEMPRÉSTIMO</h2>
+                        <p class="text-[10px] text-slate-400">Aproximação Autônoma Hardware</p>
+                    </div>
+                    <span class="bg-blue-950 text-blue-400 font-mono text-[10px] border border-blue-800 px-2 py-0.5 rounded">Terminal #01</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-2">
+                        <span class="bg-blue-900 text-blue-300 text-[10px] px-2 py-0.5 rounded font-bold uppercase">Etapa 1 de 2</span>
+                        <h3 class="text-base font-bold">Validação do QR Code</h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">Abra a tela de confirmação de reserva do Conecta FATEC no celular e posicione o QR Code em direção à webcam do totem.</p>
+                    </div>
+                    <div class="bg-slate-950 border-2 border-dashed border-blue-500/40 rounded-2xl p-6 text-center space-y-4">
+                        <i class="fa-solid fa-qrcode text-5xl text-blue-500 animate-pulse"></i>
+                        <p class="text-xs font-bold text-blue-400">AGUARDANDO LEITURA DO QR CODE DO ALUNO...</p>
+                        <button onclick="navegarPara('tela-totem-rfid')" class="w-full bg-blue-600 text-white text-xs font-bold py-2 rounded-lg hover:bg-blue-500 transition">Simular Leitura (Thiago Silva)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tela-totem-rfid" class="screen-view hidden">
+            <div class="max-w-2xl mx-auto bg-slate-900 text-white p-6 rounded-3xl border-4 border-slate-700 shadow-xl space-y-6">
+                <div class="bg-slate-800 p-3 rounded-xl flex justify-between items-center border border-slate-700 text-xs">
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 bg-green-600 rounded-full flex items-center justify-center font-bold">TS</div>
+                        <p><strong>Thiago Silva dos Santos</strong> <span class="text-slate-400 block text-[10px]">RA: 2420482311002 • Matrícula Regular</span></p>
+                    </div>
+                    <span class="bg-green-950 text-green-400 font-bold px-2 py-0.5 rounded border border-green-900">Autorizado</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-2">
+                        <span class="bg-blue-900 text-blue-300 text-[10px] px-2 py-0.5 rounded font-bold uppercase">Etapa 2 de 2</span>
+                        <h3 class="text-base font-bold">Leitura RFID do Livro</h3>
+                        <p class="text-xs text-slate-300">Aproxime o livro físico da base leitora acoplada ao ESP32 para validar o empréstimo.</p>
+                    </div>
+                    <div class="bg-green-950/40 border border-green-500/50 rounded-2xl p-4 text-center space-y-3">
+                        <span class="bg-green-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full uppercase">Sinal RFID Capturado</span>
+                        <div>
+                            <h4 class="text-sm font-bold text-green-400">Empréstimo Aprovado!</h4>
+                            <p class="text-xs font-bold text-white">Java para Iniciantes</p>
+                            <p class="text-[10px] font-mono text-slate-400">TAG: RFID-FATEC-88321</p>
+                        </div>
+                        <button onclick="navegarPara('tela-vigilante')" class="w-full bg-green-600 text-white text-xs font-bold py-2 rounded-lg hover:bg-green-500 transition">Concluir Retirada</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tela-vigilante" class="screen-view hidden space-y-4">
+            <div class="flex justify-between items-center border-b pb-2">
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900 flex items-center gap-1.5"><i class="fa-solid fa-shield text-red-700"></i> Painel do Vigilante (Portaria)</h2>
+                    <p class="text-xs text-gray-500">Validação final obrigatória de saídas do prédio da biblioteca.</p>
+                </div>
+                <span class="bg-green-100 text-green-800 font-bold text-[10px] px-2 py-0.5 rounded-full border border-green-300 animate-pulse">Monitoramento Ativo</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-2 bg-white p-5 rounded-xl border-l-8 border-green-600 shadow-sm space-y-4">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <span class="bg-green-100 text-green-800 text-[10px] font-bold uppercase px-2 py-0.5 rounded-full">Saída Autorizada</span>
+                            <h3 class="text-base font-bold text-gray-900 mt-1">Liberação Eletrônica de Exemplar</h3>
+                        </div>
+                        <span class="text-xs font-mono bg-gray-150 px-2 py-0.5 rounded font-bold">14:32</span>
+                    </div>
+
+                    <div class="bg-gray-50 p-3 rounded-lg border flex gap-3 items-center text-xs">
+                        <div class="w-12 h-12 bg-slate-200 rounded text-gray-400 flex items-center justify-center text-lg"><i class="fa-solid fa-user"></i></div>
+                        <div class="grid grid-cols-2 gap-x-4 w-full">
+                            <p>Aluno: <strong class="text-gray-900 block font-semibold">João Silva</strong></p>
+                            <p>RA: <strong class="text-gray-900 block font-mono">123456</strong></p>
+                            <p class="col-span-2 mt-1">Livro: <strong class="text-blue-900 block font-bold">Java para Iniciantes</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 justify-end text-xs font-bold">
+                        <button onclick="navegarPara('tela-divergencia')" class="border border-red-200 text-red-700 px-3 py-1.5 rounded-lg hover:bg-red-50">Reportar Divergência</button>
+                        <button onclick="alert('Saída confirmada pelo vigilante!'); navegarPara('tela-hub')" class="bg-green-600 text-white px-3 py-1.5 rounded-lg hover:bg-green-500">Confirmar Saída</button>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-xl border text-xs space-y-3 shadow-sm">
+                    <h4 class="font-bold text-gray-500 uppercase text-[10px] tracking-wider border-b pb-1.5">Alertas Recentes</h4>
+                    <p class="text-green-700 font-medium">14:32 - Saída Autorizada (João Silva)</p>
+                    <p class="text-red-700 font-medium">14:10 - Tentativa Negada: Aluno Penalizado</p>
+                    <p class="text-gray-500">13:45 - Devolução Registrada RFID: Terminal 01</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="tela-divergencia" class="screen-view hidden">
+            <div class="max-w-xl mx-auto bg-white border-2 border-red-600 rounded-2xl shadow-md overflow-hidden">
+                <div class="bg-red-600 text-white p-4 font-bold text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-triangle-exclamation text-base"></i> Divergência Identificada pelo Vigilante
+                </div>
+                <div class="p-5 space-y-4 text-xs">
+                    <p class="text-gray-600 leading-relaxed"><strong>Nota Operacional:</strong> Como o sistema opera sem portais RFID ativos na saída, a validação física pelo vigilante confere se o livro levado condiz com a autorização gerada na tela.</p>
+                    <div class="space-y-2">
+                        <p>Aluno: <strong class="text-gray-900">João Silva (RA: 123456)</strong></p>
+                        <p>Livro Esperado pelo Sistema: <strong class="text-blue-900">Java para Iniciantes</strong></p>
+                        <div>
+                            <label class="block font-bold text-gray-700 mb-1">Livro Observado em Mãos / Motivo da Divergência</label>
+                            <textarea rows="2" class="w-full border p-2 rounded focus:outline-none focus:ring-1 focus:ring-red-600" placeholder="Ex: Aluno portando livro diferente ou sem registro prévio no totem..."></textarea>
+                        </div>
+                    </div>
+                    <div class="flex gap-1.5 justify-end font-bold pt-2 border-t">
+                        <button onclick="alert('Aluno orientado a refazer o fluxo!'); navegarPara('tela-vigilante')" class="bg-amber-600 text-white px-3 py-1.5 rounded-lg hover:bg-amber-500">Orientar Aluno ao Totem</button>
+                        <button onclick="alert('Ocorrência registrada no Conecta!'); navegarPara('tela-vigilante')" class="bg-red-700 text-white px-3 py-1.5 rounded-lg hover:bg-red-800">Registrar Ocorrência</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tela-devolucao" class="screen-view hidden">
+            <div class="max-w-xl mx-auto bg-slate-900 text-white p-6 rounded-3xl border-4 border-slate-700 shadow-xl text-center space-y-6">
+                <div>
+                    <h2 class="text-xl font-black text-blue-400"><i class="fa-solid fa-arrow-rotate-left"></i> DEVOLUÇÃO DE LIVROS</h2>
+                    <p class="text-xs text-slate-300 mt-1">Aproxime o exemplar do leitor RFID para dar baixa automática.</p>
+                </div>
+                <div class="bg-green-950/50 border border-green-500/60 p-5 rounded-2xl max-w-sm mx-auto space-y-3">
+                    <i class="fa-solid fa-circle-check text-3xl text-green-400"></i>
+                    <h3 class="text-sm font-bold">Devolução Registrada com Sucesso</h3>
+                    <div class="text-left bg-slate-950 p-3 rounded text-[11px] font-mono space-y-0.5 text-slate-300">
+                        <p>Livro: Java para Iniciantes</p>
+                        <p>Status Atual: <span class="text-green-400 font-bold">Disponível no Acervo</span></p>
+                    </div>
+                    <button onclick="navegarPara('tela-hub')" class="w-full bg-green-600 text-white text-xs font-bold py-1.5 rounded-lg hover:bg-green-500 transition">Concluir</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="tela-inventario" class="screen-view hidden space-y-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h2 class="text-xl font-bold text-purple-900"><i class="fa-solid fa-warehouse"></i> Inventário Automático da Biblioteca</h2>
+                    <p class="text-xs text-gray-500">Mapeamento em tempo real via radiofrequência em lote.</p>
+                </div>
+                <button onclick="alert('Iniciando varredura RFID por antenas móveis...')" class="bg-purple-800 text-white text-xs font-bold px-3 py-2 rounded-lg hover:bg-purple-700 transition"><i class="fa-solid fa-play mr-1"></i> Iniciar Varredura</button>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-3 text-center">
+                <div class="bg-white p-3 rounded-xl border border-gray-150 text-xs shadow-sm"><p class="text-gray-400 font-bold">Cadastrados</p><p class="text-lg font-black text-gray-900">1.520</p></div>
+                <div class="bg-green-50 p-3 rounded-xl border border-green-200 text-xs shadow-sm"><p class="text-green-700 font-bold">Encontrados</p><p class="text-lg font-black text-green-700">1.218</p></div>
+                <div class="bg-red-50 p-3 rounded-xl border border-red-200 text-xs shadow-sm"><p class="text-red-700 font-bold">Ausentes</p><p class="text-lg font-black text-red-700">2</p></div>
+                <div class="bg-blue-50 p-3 rounded-xl border border-blue-200 text-xs shadow-sm"><p class="text-blue-700 font-bold">Emprestados</p><p class="text-lg font-black text-blue-700">300</p></div>
+                <div class="bg-amber-50 p-3 rounded-xl border border-amber-200 text-xs shadow-sm"><p class="text-amber-700 font-bold">Divergentes</p><p class="text-lg font-black text-amber-700">1</p></div>
+            </div>
+
+            <div class="bg-white rounded-xl border overflow-hidden shadow-sm">
+                <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                        <tr class="bg-gray-50 border-b font-bold text-gray-500 uppercase">
+                            <th class="p-3">Código RFID</th>
+                            <th class="p-3">Livro</th>
+                            <th class="p-3">Local Esperado</th>
+                            <th class="p-3">Local Encontrado</th>
+                            <th class="p-3">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y text-gray-700">
+                        <tr>
+                            <td class="p-3 font-mono">RFID-FATEC-88321</td>
+                            <td class="p-3 font-bold">Java para Iniciantes</td>
+                            <td class="p-3">Estante 2, Prateleira B</td>
+                            <td class="p-3">Estante 2, Prateleira B</td>
+                            <td class="p-3"><span class="bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded">Localizado</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="tela-echo" class="screen-view hidden">
+            <div class="max-w-md mx-auto bg-slate-950 text-white p-6 rounded-3xl border-8 border-slate-900 shadow-2xl relative space-y-6">
+                <div class="absolute top-0 inset-x-0 h-1 bg-cyan-400 shadow-[0_0_12px_rgba(34,211,238,1)] rounded-t-full animate-pulse"></div>
+                
+                <div class="flex justify-between items-center text-[10px] text-slate-400 border-b border-slate-900 pb-2">
+                    <span class="font-bold tracking-wider text-cyan-400"><i class="fa-solid fa-comment-dots"></i> ALEXA CONSULTA EM TEMPO REAL</span>
+                    <span>Echo Show 8</span>
+                </div>
+
+                <div class="text-center space-y-1">
+                    <h3 class="text-base font-bold">Como posso ajudar na Biblioteca?</h3>
+                    <p class="text-xs text-slate-400">Tente dizer comandos como estes no balcão:</p>
+                </div>
+
+                <div class="space-y-1.5 text-xs">
+                    <p class="bg-slate-900 p-2 rounded.xl border border-slate-800 text-cyan-400 italic">“Alexa, o livro Java para Iniciantes está disponível?”</p>
+                    <p class="bg-slate-900 p-2 rounded-xl border border-slate-800 text-cyan-400 italic">“Alexa, onde fica o livro de Banco de Dados?”</p>
+                </div>
+
+                <div class="bg-slate-900 p-4 rounded-xl border-l-4 border-cyan-400 space-y-1 text-xs text-left">
+                    <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wider block">Resposta Encontrada</span>
+                    <h4 class="font-bold text-white">Java para Iniciantes está Disponível!</h4>
+                    <p class="text-slate-300">Localização: <strong class="text-cyan-400">Estante 2, Prateleira B</strong>.</p>
+                    <p class="text-[10px] text-amber-400 bg-amber-950/30 p-2 rounded border border-amber-900/50 mt-2"><strong>Aviso:</strong> O Echo Show funciona apenas para consultas rápidas de orientação. Para retirar, pegue o livro e use o Totem de autoempréstimo.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 mt-12 py-4 text-center text-[11px] text-gray-400">
+        <p>© 2026 Conecta FATEC Registro • Módulo Biblioteca Digital • Executando sob Porta Alternativa 8080</p>
+    </footer>
+
+    <script>
+        function navegarPara(idTela) {
+            // Oculta todas as telas do ecossistema
+            const telas = document.querySelectorAll('.screen-view');
+            telas.forEach(tela => tela.classList.add('hidden'));
+
+            // Mostra apenas a tela selecionada pelo simulador ou links
+            const telaAlvo = document.getElementById(idTela);
+            if (telaAlvo) {
+                telaAlvo.classList.remove('hidden');
+                // Scroll de suavização automático
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+</html>

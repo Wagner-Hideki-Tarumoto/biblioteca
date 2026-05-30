@@ -1,0 +1,29 @@
+/* Cores identitárias baseadas no ecossistema FATEC */
+:root {
+    --fatec-blue-dark: #1e3a8a;
+    --fatec-blue-light: #2563eb;
+    --fatec-red: #b91c1c;
+    --bg-gray: #f3f4f6;
+}
+
+body {
+    background-color: var(--bg-gray);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Animação suave de transição de telas */
+.screen-view {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Customização de scrollbar para visual limpo */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
